@@ -126,7 +126,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example"
+        applicationId "com.rndatetimepickerexample"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -188,20 +188,21 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation(project(":react-native-datetimepicker"))
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
-    implementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
+    debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'
     }
-    implementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
+    debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
     }
-    implementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
+    debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
     }
 
     if (enableHermes) {
-        def hermesPath = "../../node_modules/hermes-engine/android/";
+        def hermesPath = "../../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")
         releaseImplementation files(hermesPath + "hermes-release.aar")
     } else {

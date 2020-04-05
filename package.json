@@ -98,7 +98,7 @@
         "build": "export RCT_NO_LAUNCH_PACKAGER=true && cd example/android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ../..",
         "type": "android.emulator",
         "device": {
-          "avdName": "Nexus_5X_API_28"
+          "avdName": "TestingAVD"
         }
       },
       "android.emu.release": {

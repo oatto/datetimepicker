@@ -1,4 +1,4 @@
-package com.example;
+package com.rndatetimepickerexample;
 
 import com.wix.detox.Detox;
 

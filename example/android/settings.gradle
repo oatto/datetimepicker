@@ -1,6 +1,10 @@
 rootProject.name = 'example'
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
-applyNativeModulesSettingsGradle(settings, "../..")
+// auto-linking does not work here, why?
+//applyNativeModulesSettingsGradle(settings, "../..")
+include ':react-native-datetimepicker'
+project(':react-native-datetimepicker').projectDir = new File(rootProject.projectDir, '../../android')
+
 
 include ':app'
